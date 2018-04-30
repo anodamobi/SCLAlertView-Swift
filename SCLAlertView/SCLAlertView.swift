@@ -291,7 +291,7 @@ open class SCLAlertView: UIViewController {
     var dismissBlock : DismissBlock?
     fileprivate var inputs = [UITextField]()
     fileprivate var input = [UITextView]()
-    var buttons = [SCLButton]()
+    public var buttons = [SCLButton]()
     fileprivate var selfReference: SCLAlertView?
     
     public init(appearance: SCLAppearance) {
