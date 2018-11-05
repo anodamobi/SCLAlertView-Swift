@@ -498,9 +498,7 @@ open class SCLAlertView: UIViewController {
     }
     
     open func addTextField(_ title:String?=nil)->UITextField {
-        // Update view height
-        appearance.setkWindowHeight(appearance.kWindowHeight + appearance.kTextFieldHeight + appearance.kTextFieldOffset)
-        // Add text field
+        // Add text default textField
         let txt = UITextField()
         txt.borderStyle = UITextBorderStyle.roundedRect
         txt.font = appearance.kTextFont
@@ -514,9 +512,15 @@ open class SCLAlertView: UIViewController {
             txt.placeholder = title!
         }
         
-        contentView.addSubview(txt)
-        inputs.append(txt)
-        return txt
+        return addCustomTextField(txt)
+    }
+    
+    open func addCustomTextField(_ textField: UITextField) -> UITextField {
+        // Update view height
+        appearance.setkWindowHeight(appearance.kWindowHeight + appearance.kTextFieldHeight + appearance.kTextFieldOffset)
+        contentView.addSubview(textField)
+        inputs.append(textField)
+        return textField
     }
     
     open func addTextView()->UITextView {
