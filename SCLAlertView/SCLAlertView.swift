@@ -221,7 +221,7 @@ open class SCLAlertView: UIViewController {
         var activityIndicatorStyle: UIActivityIndicatorView.Style
         
         fileprivate var titleYPosition: CGFloat {
-            return kCircleBackgroundHeight / 2.0 + kTitleTop
+            return kCircleBackgroundHeight / 2.0 + margin.titleTop
         }
         
         public init(kDefaultShadowOpacity: CGFloat = 0.7, kCircleBackgroundHeight: CGFloat = 62.0, kCircleTopPosition: CGFloat = 0.0, kCircleBackgroundTopPosition: CGFloat = 6.0, kCircleHeight: CGFloat = 56.0, kCircleIconHeight: CGFloat = 20.0, kTitleTop:CGFloat = 30.0, kTitleHeight:CGFloat = 25.0,  kWindowWidth: CGFloat = 240.0, kWindowHeight: CGFloat = 178.0,
@@ -232,7 +232,8 @@ open class SCLAlertView: UIViewController {
           hideWhenBackgroundViewIsTapped: Bool = false, circleBackgroundColor: UIColor = UIColor.white, contentViewColor: UIColor = UIColorFromRGB(0xFFFFFF),
           contentViewBorderColor: UIColor = UIColorFromRGB(0xCCCCCC), titleColor: UIColor = UIColorFromRGB(0x4D4D4D),
           textFieldBorderColor: UIColor? = nil, dynamicAnimatorActive: Bool = false,
-          disableTapGesture: Bool = false, buttonsLayout: SCLAlertButtonLayout = .vertical, activityIndicatorStyle: UIActivityIndicatorViewStyle = .white) {
+          disableTapGesture: Bool = false, buttonsLayout: SCLAlertButtonLayout = .vertical, activityIndicatorStyle: UIActivityIndicatorView.Style = .white,
+          subTitleColor: UIColor = UIColorFromRGB(0x4D4D4D), margin: Margin = Margin()) {
             
             self.kDefaultShadowOpacity = kDefaultShadowOpacity
             self.kCircleBackgroundHeight = kCircleBackgroundHeight
